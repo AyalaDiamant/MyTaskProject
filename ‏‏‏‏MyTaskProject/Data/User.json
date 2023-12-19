@@ -1,0 +1,7 @@
+
+[  
+    { "UserId" : 1, "Username"  : "a", "Password" : "a", "TaskManager" : true},
+    { "UserId" : 2, "Username" : "b", "Password" : "b"},
+    { "UserId" : 3, "Username" : "Yocheved", "Password" : "yyy#"}
+]
+  

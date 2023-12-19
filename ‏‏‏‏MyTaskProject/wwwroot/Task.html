@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+
+    <div id="taskCrud">
+        <div>
+            <form action="javascript:void(0);" onsubmit="logOut()">
+                <input type="submit" value="logOut">
+            </form>
+        </div>
+
+        <div class="postman-run-button" data-postman-action="collection/fork" data-postman-visibility="public"
+             data-postman-var-1="31343906-36735156-3dbd-46ef-a5ab-cdfdd305e102"
+             data-postman-collection-url="entityId=31343906-36735156-3dbd-46ef-a5ab-cdfdd305e102&entityType=collection&workspaceId=075cca56-bede-4f7f-8911-c5afb9b200d3">
+        </div>
+        <script type="text/javascript">
+            (function (p, o, s, t, m, a, n) {
+                !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+                !o.getElementById(s + t) && o.getElementsByTagName("head")[0].appendChild((
+                    (n = o.createElement("script")),
+                    (n.id = s + t), (n.async = 1), (n.src = m), n
+                ));
+            }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+        </script>
+    </div>
+
+    <a href="https://www.postman.com/telecoms-participant-27513087/workspace/taskproject/collection/31343906-36735156-3dbd-46ef-a5ab-cdfdd305e102?action=share&creator=31343906">--- Postman Link ---</a>
+
+    </div>
+
+    <h1>Task</h1>
+    <div id="user">
+
+        <div>
+            <table class="tbl">
+                <tr>
+                    <th>Status</th>
+                    <th>Descreption</th>
+                    <th>Edit</th>
+                    <th>Delate</th>
+                </tr>
+                <tbody id="tasks"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-descreption" placeholder="New Task">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="checkbox" id="edit-status">
+            <input type="text" id="edit-descreption">
+            <input type="submit" id="save" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>userId</th>
+            <th>descreption</th>
+            <th>status</th>
+        </tr>
+        <tbody id="Tasks"></tbody>
+    </table>
+
+    <div>
+        <h3>Get By Id</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="getItemById()">
+            <input type="text" id="get-item" placeholder="task id">
+            <input type="submit" value="get">
+        </form>
+        <tr>
+            <h2 class="byId" id="descreption"></h2>
+            <h2 class="byId" id="status"></h2>
+        </tr>
+    </div>
+
+    <h3>**********************************</h3>
+    <h1>Employees CRUD</h1>
+
+    <div id="manager">
+        <div>
+            <h3>Get All Employees</h3>
+            <form action="javascript:void(0);" method="GET" onsubmit="GetAllEmployees()">
+                <input type="submit" id="getAll" value="Get All Employees">
+            </form>
+            <table class="tbl">
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>delete</th>
+                    <th>Edit</th>
+                </tr>
+                <tbody id="Users"></tbody>
+            </table>
+        </div>
+        <div>
+            <h3>Get Employee By Id</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="getEmployeeById()">
+                <input type="text" id="get-employee" placeholder="Employee id">
+                <input type="submit" value="get">
+            </form>
+            <p class="byId" id="Employee"></p>
+            <table id="tbl">
+            </table>
+        </div>
+        <div>
+            <h3>Add New Employee</h3>
+            <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
+                <input type="text" id="add-user-name" placeholder="enter new user">
+                <input type="password" id="add-password" placeholder="enter new password">
+                <input type="submit" value="Add">
+            </form>
+        </div>
+
+        <div id="editFormEmployee">
+            <h3>Edit</h3>
+            <form action="javascript:void(0);" onsubmit="updateEmployee()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-name">
+                <input type="text" id="edit-password">
+                <input type="submit" id="saveEdit" value="Save">
+                <a onclick="closeInput()" aria-label="Close">✖</a>
+            </form>
+        </div>
+
+
+    </div>
+
+
+    <script src="js/site.js"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+
+</html>
